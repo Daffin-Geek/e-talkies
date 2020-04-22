@@ -1,0 +1,10 @@
+
+<IfModule mod_headers.c> 
+  Header set X-XSS-Protection: 1;
+  Header set X-Frame-Options: DENY
+</IfModule>
+
+#Applying CSP to all HTML and PHP files
+<FilesMatch "\.(html|php)$">
+Header set Content-Security-Policy "policy-definition"
+</FilesMatch>
